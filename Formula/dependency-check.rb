@@ -49,6 +49,7 @@ class DependencyCheck < Formula
     system bin/"dependency-check", "-P", "temp-props.properties", "-f", "XML",
                "--project", "dc", "-s", libexec, "-d", testpath, "-o", testpath,
                "--cveUrlBase", "https://jeremylong.github.io/DependencyCheck/hb_nvd/nvdcve-1.1-%d.json.gz",
+               "--cveUrlModified", "https://jeremylong.github.io/DependencyCheck/hb_nvd/nvdcve-1.1-modified.json.gz",
                "--cveStartYear", Time.now.year, "--cveDownloadWait", "5000"
     assert_predicate testpath/"dependency-check-report.xml", :exist?
   end
