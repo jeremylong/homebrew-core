@@ -50,7 +50,7 @@ class DependencyCheck < Formula
                "--project", "dc", "-s", libexec, "-d", testpath, "-o", testpath,
                "--cveUrlBase", "https://jeremylong.github.io/DependencyCheck/hb_nvd/nvdcve-1.1-%d.json.gz",
                "--cveUrlModified", "https://jeremylong.github.io/DependencyCheck/hb_nvd/nvdcve-1.1-modified.json.gz",
-               "--cveStartYear", Time.now.year, "--cveDownloadWait", "5000"
+               "--cveStartYear", Time.now.year, "--cveDownloadWait", "5000", "--disableKnownExploited"
     assert_predicate testpath/"dependency-check-report.xml", :exist?
   end
 end
